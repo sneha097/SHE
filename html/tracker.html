@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PERIOD TRACKER</title>
+  <style>
+    /* CSS styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #8c4090; /* Purple-pink background color */
+      background-image: url('/T.jpg');
+      height:200px;
+            width:100%;
+          
+            background-attachment: fixed;
+  background-size: cover;
+            background-image: no-repeat;
+            margin-left: 100px;
+        
+    }
+
+    .container {
+    margin-top: 150px;
+    margin-left: 250px; ;
+      max-width: 800px;
+      /* margin: 0 auto; */
+      padding: 20px;
+      background-color: #b9a1df;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      color: black; /* Pink header color */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="date"], input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #523f9e; /* Pink button background color */
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PERIOD TRACKER</h1>
+    <form id="periodForm">
+      <label for="lastPeriod">Last Period:</label>
+      <input type="date" id="lastPeriod">
+
+      <label for="cycleLength">Cycle Length:</label>
+      <input type="number" id="cycleLength">
+
+      <label for="periodLength">Period Length:</label>
+      <input type="number" id="periodLength">
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <!-- Calendar UI placeholder -->
+  <div id="calendarContainer"></div>
+
+  <!-- Login page placeholder -->
+  <div id="loginContainer"></div>
+
+  <script>
+    // Function to handle form submission
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      var lastPeriodDate = new Date(document.getElementById('lastPeriod').value);
+      var cycleLength = parseInt(document.getElementById('cycleLength').value);
+      var periodLength = parseInt(document.getElementById('periodLength').value);
+
+      if (!isNaN(lastPeriodDate) && !isNaN(cycleLength) && !isNaN(periodLength)) {
+        // Calculate next period date
+        var nextPeriodDate = new Date(lastPeriodDate);
+        nextPeriodDate.setDate(nextPeriodDate.getDate() + cycleLength);
+
+        // Calculate ovulation date (example, not accurate)
+        var ovulationDate = new Date(lastPeriodDate);
+        ovulationDate.setDate(ovulationDate.getDate() + cycleLength - 14);
+
+        // Calculate time left for ovulation (example, not accurate)
+        var timeLeftForOvulation = ovulationDate.getTime() - Date.now();
+        var daysLeftForOvulation = Math.ceil(timeLeftForOvulation / (1000 * 3600 * 24));
+
+        // Update result display
+        var resultElement = document.getElementById('result');
+        resultElement.innerHTML = "Next period: " + nextPeriodDate.toDateString() +
+          "<br>Chance of pregnancy: 50%" +
+          "<br>Time left for ovulation: " + daysLeftForOvulation + " days";
+      }
+    }
+
+    // Add event listener to the form
+    var formElement = document.getElementById('periodForm');
+    formElement.addEventListener('submit', handleFormSubmit);
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <body>
+      <img style="width:1460px" height="700px" src="/x2.png">
+	<div class="login-box">
+  </div>
+  <div class="login-box">
+    <p>LogIn</p>
+    <form>
+      <div class="user-box">
+        <input required="" name="" type="text">
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input required="" name="" type="password">
+        <label>Password</label>
+      </div>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+       <a href="http://127.0.0.1:5500/html/admin1.html" target="_blank">Submit</a> 
+      </a> 
+    </form>
+    <p>Don't have an account? <a href="" class="sign">Sign up!</a></p>
+  </div>
+        <style>
+          * {
+	box-sizing: border-box;
+}
+body {
+	font-family: poppins;
+	font-size: 16px;
+	color: #fff;
+    
+}
+.login-box {
+	background-color:rgba(26, 18, 18, 0.247);
+	margin: auto auto;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #967b7b;
+	position: absolute;
+  margin-top:130px ;
+	top:100px;
+	bottom: 0;
+	left:45px;
+	right: 0;
+	width: 550px;
+	height: 430px;
+}
+
+
+.login-box p:first-child {
+  margin: 0 0 30px;
+  padding: 0;
+  color:plum;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color:#fff
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color:#fff;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 3px
+}
+
+.login-box a:hover {
+  background:#9152aa;
+  color: #272727;
+  border-radius: 5px;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+
+.login-box p:last-child {
+  color:#fff;
+  font-size: 14px;
+}
+
+.login-box a.sign{
+  color:#fff;
+  text-decoration: none;
+}
+
+.login-box a.sign:hover {
+  background: transparent;
+  color: rgb(255, 0, 234);
+  border-radius: 5px;
+}
+body{
+  background-color: black;
+}
+        </style>
+  
+    
+</body>
+</head>
+</html>
